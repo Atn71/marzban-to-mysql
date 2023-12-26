@@ -159,7 +159,7 @@ ${no_color}"
 }
 
 check_server_os() {
-  if [ "$OS_NAME" == "" ] && [ "$OS_VERSION" == "" ] || [ "$OS_VERSION" == "" ]; then
+  if [ "$OS_NAME" == "Debian" ] && [ "$OS_VERSION" == "12" ] || [ "$OS_VERSION" == "12" ]; then
     echo -e "${green}${T[101]}${OS_VERSION}${no_color}"
   else
     echo -e "${red}${T[000]} ${T[100]}${no_color}" && exit 1
@@ -168,7 +168,7 @@ check_server_os() {
 
 install_pkgs() {
 
-  if [[ $(lsb_release -rs) == "" ]]; then
+  if [[ $(lsb_release -rs) == "Debian" ]]; then
 
     echo -e "\n ${blue} sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser ${no_color} \n"
     sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser
