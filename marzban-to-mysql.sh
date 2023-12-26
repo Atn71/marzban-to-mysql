@@ -423,7 +423,7 @@ installing_phpmyadmin() {
   if [ "$phpmyadmin_installation_response" == "Y" ] || [ "$phpmyadmin_installation_response" == "y" ] || [ -z "$phpmyadmin_installation_response" ]; then
     echo -e "\n ${blue}editing docker-compose.yml to add phpmyadmin${no_color}\n"
     phpmyadmin_service_line=$(grep -n "phpmyadmin:" "$docker_compose_file_path" | head -n 1 | cut -d: -f1)
-    phpmyadmin_service=" \ \ phpmyadmin:\n    image: phpmyadmin\/phpmyadmin:latest\n    restart: always\n    env_file: .env\n    network_mode: host\n    environment:\n      PMA_HOST: 127.0.0.1\n      APACHE_PORT: 7409\n      UPLOAD_LIMIT: 1024M\n    depends_on:\n      - mysql\n\n"
+    phpmyadmin_service=" \ \ phpmyadmin:\n    image: phpmyadmin\/phpmyadmin:latest\n    restart: always\n    env_file: .env\n    network_mode: host\n    environment:\n      PMA_HOST: 127.0.0.1\n      APACHE_PORT: 12209\n      UPLOAD_LIMIT: 1024M\n    depends_on:\n      - mysql\n\n"
     if [ -z "$phpmyadmin_service_line" ]; then
        
        insert_line=$((volumes_line + 1))
