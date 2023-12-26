@@ -162,7 +162,7 @@ check_server_os() {
   if [ "$OS_NAME" == "Debian" ] && [ "$OS_VERSION" == "12" ] || [ "$OS_VERSION" == "12" ]; then
     echo -e "${green}${T[101]}${OS_VERSION}${no_color}"
   else
-    echo -e "${red}${T[000]} ${T[100]}${no_color}" && exit 1
+    echo -e "${red}${T[000]} ${T[100]}${no_color}" 
   fi
 }
 
